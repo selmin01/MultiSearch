@@ -1,0 +1,66 @@
+<div class="flex flex-col items-center bg-gray-100 min-h-screen py-12 space-y-8 px-6">
+
+    <!-- 🔹 Título -->
+    <h1 class="text-3xl font-bold text-gray-800">🔍 Sobre o Sistema de Busca</h1>
+
+    <!-- 🔹 Introdução -->
+    <p class="text-gray-600 text-lg text-center max-w-3xl">
+        Este sistema foi desenvolvido para buscar rapidamente informações contidas em diferentes categorias de dados.
+        Ele permite que você pesquise pedidos de compra, pedidos de venda, materiais, equipamentos e mão de obra de
+        forma eficiente e organizada.
+    </p>
+
+    <!-- 🔹 Como funciona -->
+    <div class="bg-white p-6 rounded-lg shadow-md max-w-3xl w-full">
+        <h2 class="text-2xl font-semibold text-gray-800 mb-4">🛠 Como Funciona?</h2>
+        <p class="text-gray-600 text-base">
+            O sistema de busca é composto por duas partes principais:
+        </p>
+        <ul class="list-disc text-gray-700 mt-2 ml-6">
+            <li><strong>Front-end:</strong> Interface intuitiva que permite ao usuário inserir um termo de pesquisa e
+                visualizar os resultados organizados por categoria.</li>
+            <li><strong>Back-end (API Fastify):</strong> Um servidor leve e eficiente que processa a requisição, busca
+                os dados nos arquivos JSON e retorna os resultados formatados.</li>
+        </ul>
+    </div>
+
+    <!-- 🔹 Magia da API -->
+    <div class="bg-white p-6 rounded-lg shadow-md max-w-3xl w-full">
+        <h2 class="text-2xl font-semibold text-gray-800 mb-4">✨ A Mágica da API</h2>
+        <p class="text-gray-600 text-base">
+            Quando o usuário digita um termo e inicia a busca, a API realiza os seguintes passos:
+        </p>
+        <ol class="list-decimal text-gray-700 mt-2 ml-6">
+            <li>Recebe a requisição com a palavra-chave enviada pelo usuário.</li>
+            <li>Carrega os arquivos JSON que contêm os dados das categorias.</li>
+            <li>Normaliza os textos, removendo acentos e convertendo para minúsculas.</li>
+            <li>Realiza a busca nos arquivos e retorna apenas os itens que possuem o termo pesquisado.</li>
+            <li>Envia os resultados para o front-end, que exibe os dados organizados.</li>
+        </ol>
+    </div>
+
+    <!-- 🔹 Exemplo de Uso -->
+    <div class="bg-white p-6 rounded-lg shadow-md max-w-3xl w-full">
+        <h2 class="text-2xl font-semibold text-gray-800 mb-4">📢 Como Usar?</h2>
+        <p class="text-gray-600 text-base">Para utilizar o sistema, siga os passos abaixo:</p>
+        <ol class="list-decimal text-gray-700 mt-2 ml-6">
+            <li>Digite um termo de busca no campo de pesquisa.</li>
+            <li>Escolha uma ou mais categorias para filtrar os resultados.</li>
+            <li>Os resultados serão exibidos em tabelas organizadas por categoria.</li>
+            <li>Clique no ID de um item para visualizar todos os seus detalhes.</li>
+            <li>Utilize a paginação para navegar pelos resultados.</li>
+        </ol>
+    </div>
+
+    <!-- 🔹 Conclusão -->
+    <div class="bg-white p-6 rounded-lg shadow-md max-w-3xl w-full">
+        <h2 class="text-2xl font-semibold text-gray-800 mb-4">🎯 Objetivo do Sistema</h2>
+        <p class="text-gray-600 text-base">
+            Este projeto foi desenvolvido como um desafio técnico, focado em otimizar a busca de informações
+            estruturadas.
+            O sistema melhora a produtividade ao permitir que os usuários encontrem os dados rapidamente, sem precisar
+            navegar manualmente pelos registros.
+        </p>
+    </div>
+
+</div>

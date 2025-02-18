@@ -1,0 +1,54 @@
+
+<div class="flex flex-col md:flex-row items-center justify-center bg-gray-100 px-6 py-6">
+  
+  <!-- Container Principal -->
+  <div class="w-full max-w-5xl bg-white shadow-lg rounded-lg overflow-hidden flex flex-col md:flex-row">
+
+    <!-- Lado Esquerdo: Conteúdo -->
+    <div class="w-full md:w-1/2 flex flex-col justify-center items-center p-8">
+      <h1 class="text-3xl font-bold text-gray-900 text-center">🔎 Encontre Tudo em Segundos!</h1>
+      <p class="mt-3 text-md text-gray-700 text-center max-w-xs">
+        Com o <strong>MultiSearch</strong>, você pode buscar pedidos de venda, compras, materiais e muito mais.
+        Basta digitar o que procura e obter resultados instantaneamente.
+      </p>
+
+      <!-- Botão de Busca -->
+      <a routerLink="/search"
+        class="mt-5 px-6 py-3 bg-orange-600 text-white text-md font-semibold rounded-lg hover:bg-orange-800 transition">
+        🔍 Faça sua Busca Agora!
+      </a>
+    </div>
+
+    <!-- Lado Direito: Dashboard -->
+    <div class="w-full md:w-1/2 flex flex-col justify-center items-center bg-gray-50 p-8">
+      <h2 class="text-xl font-bold text-gray-800 mb-3">📊 Dados do Sistema</h2>
+      <div class="grid grid-cols-2 gap-4 text-center w-full max-w-xs">
+        
+        <!-- Funcionários -->
+        <div class="bg-blue-100 p-4 rounded-lg shadow-md">
+          <h3 class="text-md font-semibold text-blue-600">👨‍💼 Funcionários</h3>
+          <p class="text-2xl font-bold text-blue-900">23</p>
+        </div>
+
+        <!-- Pedidos de Venda -->
+        <div class="bg-green-100 p-4 rounded-lg shadow-md">
+          <h3 class="text-md font-semibold text-green-600">🛒 Pedidos de Venda</h3>
+          <p class="text-2xl font-bold text-green-900">14</p>
+        </div>
+
+        <!-- Pedidos de Compra -->
+        <div class="bg-yellow-100 p-4 rounded-lg shadow-md">
+          <h3 class="text-md font-semibold text-yellow-600">📦 Pedidos de Compra</h3>
+          <p class="text-2xl font-bold text-yellow-900">16</p>
+        </div>
+
+        <!-- Materiais -->
+        <div class="bg-red-100 p-4 rounded-lg shadow-md">
+          <h3 class="text-md font-semibold text-red-600">🔩 Materiais</h3>
+          <p class="text-2xl font-bold text-red-900">19</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

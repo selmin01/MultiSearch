@@ -1,0 +1,52 @@
+<div class="flex flex-col items-center bg-gray-100 min-h-screen py-12 space-y-8">
+
+  <!-- 🔹 Componente de Pesquisa -->
+  <app-search-input (searchEvent)="onSearch($event)"></app-search-input>
+
+  <!-- 🔹 Contador de Resultados -->
+  <p class="text-gray-600 text-sm mt-3" *ngIf="searchPerformed">
+    Foram encontrados <strong>{{ filteredResultsCount }}</strong> resultados:
+  </p>
+
+  <!-- 🔹 Filtro de Categorias - Botões Customizados -->
+  <div class="flex flex-wrap justify-center gap-3">
+    <button *ngFor="let category of availableCategories" (click)="toggleCategory(category.key)" 
+      class="flex items-center px-4 py-2 rounded-lg shadow-md transition-all
+    text-gray-700 bg-orange-500 border border-gray-300  hover:text-white"
+      [class.bg-orange-500]="isCategorySelected(category.key)" [class.text-white]="isCategorySelected(category.key)">
+
+      <i [ngClass]="category.icon" class="mr-2"></i>
+      {{ category.label }}
+    </button>
+  </div>
+
+  <!-- 🔹 Resultados -->
+  <div class="w-full max-w-4xl space-y-8">
+
+    <!-- 🔹 Exibe as tabelas filtradas -->
+    <ng-container *ngIf="filteredResults.length > 0; else noResults">
+      <app-search-table *ngFor="let category of filteredResults"
+        [title]="category.title"
+        [count]="category.items.length"
+        [items]="category.items">
+      </app-search-table>
+    </ng-container>
+
+    <!-- 🔹 Caso nenhuma categoria tenha sido encontrada, exibe uma mensagem -->
+    <ng-template #noResults>
+      <div *ngIf="searchPerformed" class="text-center bg-white p-6 rounded-lg shadow-md">
+        <h2 class="text-xl font-semibold text-gray-800">Nenhum resultado encontrado</h2>
+        <p class="text-gray-600 mt-2">🔄 Refaça sua busca.</p>
+      </div>
+    </ng-template>
+
+    <!-- 🔹 Mensagem caso não tenha resultados -->
+    <ng-template #noResults>
+      <div *ngIf="searchPerformed" class="text-center bg-white p-6 rounded-lg shadow-md">
+        <h2 class="text-xl font-semibold text-gray-800">Nenhum resultado encontrado</h2>
+        <p class="text-gray-600 mt-2">🔄 Refaça sua busca.</p>
+      </div>
+    </ng-template>
+
+  </div>
+</div>

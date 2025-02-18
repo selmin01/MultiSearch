@@ -1,0 +1,81 @@
+<div class="flex justify-between items-center px-6 py-2 bg-white rounded-lg border border-gray-300 shadow-md">
+
+    <!-- 🔹 Botão Anterior -->
+    <button (click)="handlePrevious()" [disabled]="currentPage === 1"
+        class="px-3 py-2 rounded-full disabled:opacity-50 flex items-center justify-center">
+        <i class="fas fa-angle-left text-orange-500"></i>
+    </button>
+
+    <!-- 🔹 Paginação Desktop -->
+    <div class="hidden xl:flex space-x-1">
+        <ng-container *ngIf="totalPages > 6; else simplePagination">
+            <div class="flex gap-2 items-center">
+                <!-- 🔸 Botão Primeira Página -->
+                <button (click)="changePage(1)"
+                    class="w-9 h-9 flex items-center justify-center rounded-full border border-gray-300 text-gray-800"
+                    [ngClass]="{ 'bg-orange-500 text-white': currentPage === 1 }">
+                    1
+                </button>
+
+                <!-- 🔸 Pontos para indicar continuidade -->
+                <span *ngIf="currentPage > 4" class="text-gray-500 font-semibold">...</span>
+
+                <!-- 🔸 Páginas visíveis -->
+                <ng-container *ngFor="let page of getVisiblePages()">
+                    <button (click)="changePage(page)"
+                        class="w-9 h-9 flex items-center justify-center rounded-full border border-gray-300 text-gray-800"
+                        [ngClass]="{ 'bg-orange-500 text-white': currentPage === page }">
+                        {{ page }}
+                    </button>
+                </ng-container>
+
+                <!-- 🔸 Pontos para indicar continuidade -->
+                <span *ngIf="(currentPage + 3) < totalPages" class="text-gray-500 font-semibold">...</span>
+
+                <!-- 🔸 Botão Última Página -->
+                <button (click)="changePage(totalPages)"
+                    class="w-9 h-9 flex items-center justify-center rounded-full border border-gray-300 text-gray-800"
+                    [ngClass]="{ 'bg-orange-500 text-white': currentPage === totalPages }">
+                    {{ totalPages }}
+                </button>
+            </div>
+        </ng-container>
+
+        <ng-template #simplePagination>
+            <ng-container *ngFor="let page of getVisiblePages()">
+                <button (click)="changePage(page)"
+                    class="w-9 h-9 flex items-center justify-center rounded-full border border-gray-300 text-gray-800"
+                    [ngClass]="{ 'bg-orange-500 text-white': currentPage === page }">
+                    {{ page }}
+                </button>
+            </ng-container>
+        </ng-template>
+    </div>
+
+    <!-- 🔹 Paginação Mobile -->
+    <div class="flex items-center xl:hidden space-x-2">
+        <button class="w-9 h-9 flex items-center justify-center rounded-full bg-orange-500 text-white">
+            {{ currentPage }}
+        </button>
+        <span class="text-gray-500">/</span>
+        <span class="text-gray-700 font-semibold">{{ totalPages }}</span>
+    </div>
+
+    <!-- 🔹 Botão Próximo -->
+    <button (click)="handleNext()" [disabled]="currentPage === totalPages"
+        class="px-3 py-2 rounded-full disabled:opacity-50 flex items-center justify-center">
+        <i class="fas fa-angle-right text-orange-500"></i>
+    </button>
+
+    <!-- 🔹 Seletor de Linhas por Página -->
+    <div class="flex items-center ml-4">
+        <label for="rowsPerPage" class="text-sm text-gray-600 mr-2">Linhas:</label>
+        <select id="rowsPerPage" (change)="updateRowsPerPage($event)"
+            class="p-2 border border-gray-300 rounded-md text-sm bg-white focus:ring-2 focus:ring-orange-400">
+            <option value="" disabled selected>Selecionar</option>
+            <option *ngFor="let option of rowOptions" [value]="option">
+                {{ option }} linhas
+            </option>
+        </select>
+    </div>
+</div>

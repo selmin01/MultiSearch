@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "target": "ES2020",                     // Melhor suporte para recursos modernos (pode usar ES6 se preferir)
+    "module": "CommonJS",                   // Módulo padrão para Node.js
+    "outDir": "./dist",                     // Diretório de saída após a compilação
+    "rootDir": "./src",                     // Diretório raiz do código-fonte
+    "strict": true,                         // Ativa todas as verificações de tipo
+    "esModuleInterop": true,                // Permite importações padrão de módulos CommonJS
+    "skipLibCheck": true,                   // Ignora checagem de tipos em node_modules (melhora performance)
+    "forceConsistentCasingInFileNames": true, // Previne problemas de case em imports
+    "moduleResolution": "node",             // Resolve módulos como o Node.js
+    "resolveJsonModule": true,              // Permite importação de arquivos JSON
+    "types": ["node", "@fastify/cors"],     // Inclui tipos do Node e do @fastify/cors
+    "allowSyntheticDefaultImports": true    // Permite importações padrão mesmo sem exports default
+  },
+  "include": ["src/**/*"],                  // Inclui todos os arquivos TypeScript na pasta src
+  "exclude": ["node_modules", "dist"]       // Exclui as pastas desnecessárias
+}
