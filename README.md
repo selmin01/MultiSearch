@@ -1,6 +1,6 @@
 # MultiSearch
 
-Aqui está um **README.md** bem estruturado para o seu projeto, explicando os detalhes do **front-end (Angular)** e **back-end (Node.js com Fastify)**, além de instruções para rodar o projeto e uma **imagem de exemplo**.
+**README.md** explicando os detalhes do **front-end (Angular)** e **back-end (Node.js com Fastify)**, além de instruções para rodar o projeto e uma **imagem de exemplo**.
 
 ---
 
